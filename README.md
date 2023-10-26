@@ -32,4 +32,4 @@ Divirta-se compartilhando arquivos com facilidade usando este projeto de transfe
 - Linguagem de Programação: Python
 - Bibliotecas: http.server, urllib
 
-<img align="center" alt="Python Logo" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+<img align="center" alt="Python Logo" height="50" width="50" src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg">
