@@ -25,5 +25,6 @@ class Servidor(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(file_to_open)
 
-httpd = HTTPServer(('localhost', 8080), Servidor)
+httpd = HTTPServer(('0.0.0.0', 8080), Servidor)
+
 httpd.serve_forever()
