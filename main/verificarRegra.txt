@@ -1,0 +1,5 @@
+após executar qualquer um dos bats abra o firewall do windows defender
+
+pesquise firewall e clique em firewwall do windows defender 
+
+clique em configurções avançadas, regras de entradas e procure "Permit Porta 8080" se existir é porque foi criada com sucesso, a verificação pode ser a mesma para verificar se foi deletada com sucesso
