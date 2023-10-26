@@ -2,22 +2,15 @@ from urllib import request
 from alive_progress import alive_bar
 import time
 
-#oi
-def a():
-    for total in 5000, 7000, 4000, 0:
-        with alive_bar(total) as bar:
-            for _ in range(5000):
-                time.sleep(.001)
-                bar()
+def download(url, file):
+    request.urlretrieve(url, file)
+    with alive_bar(20, title="Download em andamento") as bars:
+        for _ in range(10):
+            time.sleep(1)  
+            bars()
 
-print("insira url do quer baixar")
-url = input()
+url = input("Insira a URL que deseja baixar: ")
+file = input("Insira o nome e a extensão do arquivo: ")
 
-print("insira o nome e a extensão do arquivo")
-file = input()
-
-request.urlretrieve(url, file)
-value = True 
-while (value):
-    a()
-
+download(url, file)
+print(f"Download de {file} concluído com sucesso!")
