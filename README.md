@@ -1,35 +1,57 @@
 # Projeto de Transferência de Arquivos
 
-Este projeto permite que você abra uma porta para servir um arquivo de sua escolha, enquanto um colega pode se conectar a essa porta e baixar o arquivo. O projeto consiste em dois programas Python.
+Este projeto permite que você compartilhe arquivos de forma simples e eficiente. Ele consiste em dois programas Python que facilitam a transferência de arquivos entre você e seus colegas.
 
-## `localhost.py` - Abre servidor HTTP
+### localhost.py - Servidor HTTP
+O script Python localhost.py é responsável por criar um servidor HTTP  para "hospedar" um arquivo de sua escolha. Após configurar as regras do firewall utilizando os bats, siga estas etapas para usar o servidor:
 
-É responsável por criar um servidor HTTP local para "hostear" um arquivo escolhido. 
+Execute o arquivo localhost.py.
+Ele solicitará que você insira o nome do arquivo e sua extensão.
+O arquivo deve estar no mesmo diretório que o localhost.py.
+O servidor estará disponível em http://seu_ip:8080/, servindo o arquivo especificado.
 
-### Como usar o servidor:
 
-1. Execute o arquivo `localhost.py`.
-2. Ele solicitará que você insira o nome do arquivo e sua extensão.
-3. O arquivo deve estar no mesmo diretório que o `localhost.py`
-5. O servidor estará disponível em `http://localhost:8080/`, servindo o arquivo especificado.
+### url.py - Cliente de Download
+O script Python url.py permite que um colega baixe o arquivo do servidor criado com o localhost.py. Para usá-lo, siga estas etapas:
 
-## `url.py` - Faz Download pelo link
-
-O segundo código permite que um colega baixe o arquivo do servidor criado com o `localhost.py`.
-
-### Como usar o cliente de download:
-
-1. Execute o arquivo `url.py`.
-2. Ele solicitará a URL do servidor (ex: `http://seu_endereco_ip:8080/`)
-3. Ele solicitará o nome do arquivo com a extensão.
-4. O cliente fará o download do arquivo do servidor e o salvará localmente.
-
+Execute o arquivo url.py.
+Ele solicitará a URL do servidor (por exemplo, http://seu_endereco_ip:8080/).
+Ele solicitará o nome do arquivo com a extensão.
+O cliente fará o download do arquivo do servidor e o salvará localmente.
 Certifique-se de compartilhar a URL do servidor (gerada automaticamente pelo servidor HTTP) com o seu colega para que eles possam baixar o arquivo.
+## Configuração (Windows)
 
-Divirta-se compartilhando arquivos com facilidade usando este projeto de transferência de arquivos!
+Antes de executar os programas Python, é necessário configurar as regras do firewall no Windows para permitir o tráfego na porta 8080. Você pode fazer isso executando os seguintes .bats:
 
-## Requisitos
-- Linguagem de Programação: Python
-- Bibliotecas: http.server, urllib
+### Permitir Tráfego na Porta 8080
+
+Execute o seguinte script para permitir o tráfego na porta 8080:
+
+```batch
+@echo off
+echo Permitindo tráfego para a porta 8080
+netsh advfirewall firewall add rule name="Permit Porta 8080" dir=in action=allow protocol=TCP localport=8080
+echo Regra Criada.
+pause
+```
+### Excluir Regra de Tráfego
+Se você desejar excluir a regra que permite o tráfego na porta 8080, execute o seguinte script:
+
+```batch
+Copy code
+@echo off
+echo Excluindo regra que permite o tráfego
+netsh advfirewall firewall delete rule name="Permit Porta 8080"
+echo Regra excluída.
+pause
+```
+
+### Requisitos
+Linguagem de Programação: Python
+Bibliotecas: http.server, urllib, alive-progress
+```batch
+ pip install alive-progress
+```
 
 <img align="center" alt="Python Logo" height="50" width="50" src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg">
+
