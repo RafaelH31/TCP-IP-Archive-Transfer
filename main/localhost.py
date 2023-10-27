@@ -1,6 +1,8 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
+import sys
 import os
 
+os.system("main\Arquivosbat\RegraPermiteTraf.bat")
 print("Insira o nome do arquivo e a extensão dele (por exemplo, arquivo.zip):")
 a = input()
 
@@ -43,3 +45,12 @@ class Servidor(BaseHTTPRequestHandler):
 
 httpd = HTTPServer(('0.0.0.0', 8080), Servidor)
 httpd.serve_forever()
+
+print("Digite qualquer tecla para encerrar o programa e fechar a porta 8080")
+opcao = input()
+if opcao is not None:
+os.system("main\Arquivosbat\DeletarRegraTraf.bat")
+sys.exit()
+
+    
+
