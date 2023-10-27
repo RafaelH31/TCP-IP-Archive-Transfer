@@ -3,6 +3,12 @@ import subprocess
 import sys
 import os
 
+<<<<<<< HEAD
+=======
+bat_file_permite = "RegraPermiteTraf.bat"
+subprocess.call(["runas", "/user:Administrator", bat_file_permite])
+
+>>>>>>> f0094c2c35205b6f77cd5f4e0cd7979a75321c12
 print("Insira o nome do arquivo e a extensão dele (por exemplo, arquivo.zip):")
 a = input()
 
@@ -49,6 +55,12 @@ httpd.serve_forever()
 print("Digite qualquer tecla para encerrar o programa e fechar a porta 8080")
 opcao = input()
 if opcao is not None:
+<<<<<<< HEAD
     sys.exit()
+=======
+bat_file_deletar = "DeleterRegraTraf.bat"
+subprocess.call(["runas", "/user:Administrator", bat_file_deletar)
+sys.exit()
+>>>>>>> f0094c2c35205b6f77cd5f4e0cd7979a75321c12
 
     
