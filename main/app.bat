@@ -8,8 +8,7 @@ echo pressione qualquer tecla para iniciar o progama
 pause > nul
 
 echo Iniciando o arquivo localhost.py
-python localhost.py
-echo O arquivo localhost.py foi executado com sucesso.
+py localhost.py
 
 echo agora que fechou o progama aperte qualquer tecla para fechar a porta 
 pause > nul

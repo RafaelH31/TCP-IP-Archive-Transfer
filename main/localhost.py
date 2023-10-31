@@ -2,6 +2,13 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import subprocess
 import sys
 import os
+import socket
+
+
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+
+print("mande para seu amigos se conectar em: http://" + ip_address + ":8080")
 
 print("Insira o nome do arquivo e a extensão dele (por exemplo, arquivo.zip):")
 a = input()
