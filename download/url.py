@@ -11,6 +11,6 @@ def download(url, file):
 
 url = input("Insira a URL que seu amigo recebeu para baixar:")
 file = input("Insira o nome e a extensão do arquivo: ")
+request.urlretrieve(url, file)
 
-download(url, file)
 print(f"Download de {file} concluído com sucesso!")
