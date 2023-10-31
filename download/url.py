@@ -9,7 +9,7 @@ def download(url, file):
             time.sleep(1)  
             bars()
 
-url = input("Insira a URL que deseja baixar: ")
+url = input("Insira a URL que seu amigo recebeu para baixar:")
 file = input("Insira o nome e a extensão do arquivo: ")
 
 download(url, file)

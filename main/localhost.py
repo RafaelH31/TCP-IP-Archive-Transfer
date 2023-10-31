@@ -8,9 +8,9 @@ import socket
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 
-print("mande para seu amigos se conectar em: http://" + ip_address + ":8080")
+print("mande o seguinte link para seu amigo colocar no downlad: http://" + ip_address + ":8080")
 
-print("Insira o nome do arquivo e a extensão dele (por exemplo, arquivo.zip):")
+print("Insira o nome do arquivo e a extensão dele, te, que estar no mesmo direotrio (por exemplo, arquivo.zip):")
 a = input()
 
 class Servidor(BaseHTTPRequestHandler):
